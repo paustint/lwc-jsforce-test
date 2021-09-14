@@ -1,0 +1,51 @@
+{
+    "name": "lwc-jsforce-test",
+    "description": "My amazing LWC app",
+    "version": "0.0.1",
+    "author": "Austin Turner",
+    "bugs": "https://github.com/Austin Turner/lwc-jsforce-test/issues",
+    "dependencies": {
+        "buffer": "^6.0.3",
+        "compression": "^1.7.4",
+        "express": "^4.17.1",
+        "helmet": "^4.6.0",
+        "jsforce": "^1.10.1",
+        "stream-browserify": "^3.0.0",
+        "timers-browserify": "^2.0.12",
+        "util": "^0.12.4"
+    },
+    "engines": {
+        "node": ">=10.13.0",
+        "npm": ">=6.4.1",
+        "yarn": ">=1.9.4"
+    },
+    "homepage": "https://github.com/Austin Turner/lwc-jsforce-test",
+    "keywords": [
+        "lwc"
+    ],
+    "license": "MIT",
+    "repository": "Austin Turner/lwc-jsforce-test",
+    "scripts": {
+        "build": "lwc-services build -m production --webpack=webpack.config.js",
+        "build:development": "lwc-services build --webpack=webpack.config.js",
+        "lint": "eslint ./src/**/*.js",
+        "postinstall": "husky install",
+        "precommit": "npm run prettier:verify && [ $? -eq 0 ] && npm run lint",
+        "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
+        "prettier:verify": "prettier --list-different \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
+        "start": "node scripts/server.js",
+        "test:unit": "lwc-services test:unit",
+        "test:unit:coverage": "lwc-services test:unit --coverage",
+        "test:unit:debug": "lwc-services test:unit --debug",
+        "test:unit:watch": "lwc-services test:unit --watch",
+        "watch": "lwc-services watch --webpack=webpack.config.js"
+    },
+    "devDependencies": {
+        "eslint": "^7.32.0",
+        "eslint-plugin-inclusive-language": "^2.1.1",
+        "husky": "^4.2.5",
+        "lwc-services": "^3.1.2",
+        "prettier": "^2.3.2",
+        "process": "^0.11.10"
+    }
+}
